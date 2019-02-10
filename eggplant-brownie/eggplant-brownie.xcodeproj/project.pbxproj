@@ -17,6 +17,7 @@
 		262C24872203AD7C0084C0FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262C24862203AD7C0084C0FB /* ViewController.swift */; };
 		262C24892203AE920084C0FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262C24882203AE920084C0FB /* Main.storyboard */; };
 		26D569322208E39C008E78C1 /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D569312208E39C008E78C1 /* MealsTableViewController.swift */; };
+		26D8CF0022105AC500C2EBB9 /* AddAMealDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8CEFF22105AC500C2EBB9 /* AddAMealDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		262C24882203AE920084C0FB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		26A4880F21FFA70B00C8CF00 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		26D569312208E39C008E78C1 /* MealsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
+		26D8CEFF22105AC500C2EBB9 /* AddAMealDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAMealDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			children = (
 				262C24822203A9710084C0FB /* Meal.swift */,
 				262C24842203AA0D0084C0FB /* Item.swift */,
+				26D8CEFF22105AC500C2EBB9 /* AddAMealDelegate.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				26D569322208E39C008E78C1 /* MealsTableViewController.swift in Sources */,
 				262C24852203AA0D0084C0FB /* Item.swift in Sources */,
 				262C24832203A9710084C0FB /* Meal.swift in Sources */,
+				26D8CF0022105AC500C2EBB9 /* AddAMealDelegate.swift in Sources */,
 				262C24872203AD7C0084C0FB /* ViewController.swift in Sources */,
 				261D352321FDD78200B705AD /* AppDelegate.swift in Sources */,
 			);
