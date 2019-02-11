@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var nameField : UITextField?
     @IBOutlet var happinessField : UITextField?
     var delegate : AddAMealDelegate?
+    var selected = Array<Item>()
     
     var items = [
         Item(name: "Eggplant", calories: 10),
@@ -28,8 +29,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             if(cell.accessoryType == UITableViewCell.AccessoryType.none){
                 cell.accessoryType = UITableViewCell.AccessoryType.checkmark
+                
+                let item = items[indexPath.row]
+                selected.append(item)
             }else{
                 cell.accessoryType = UITableViewCell.AccessoryType.none
+                
+                let item = items[indexPath.row]
+                if let position = selected.index(of: item){
+                    selected.remove(at: position)
+                }
             }
             
         }
@@ -57,9 +66,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let name:String = nameField!.text!
         
         if let happiness = Int(happinessField!.text!) {
-            let meal = Meal(name: name, happiness: happiness)
+            let meal = Meal(name: name, happiness: happiness, items: selected)
             
-            print("eaten \(meal.name) with happiness \(meal.happiness)!")
+            print("eaten \(meal.name) with happiness \(meal.happiness). Items: \(meal.items)!")
             
             if(delegate == nil) {
                 return
