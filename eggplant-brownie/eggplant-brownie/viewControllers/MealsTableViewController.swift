@@ -40,13 +40,28 @@ class MealsTableViewController: UITableViewController, AddAMealDelegate{
     }
     
     @objc func showDetails(recognizer: UILongPressGestureRecognizer){
+        // Se for um Gesto que está no inicio, ele inicia o código
         if(recognizer.state == UIGestureRecognizer.State.began){
+            // Fazendo um Cast de UIView para UITableViewCell, para que possamos acessar qual a refeição que está na linha pressionada
             let cell = recognizer.view as! UITableViewCell
             
+            // Descobrindo qual a refeição que está na linha pressionada
             if let indexPath = tableView.indexPath(for: cell){
                 let row = indexPath.row
                 let meal = meals[row]
-                print("Long press \(meal.name)")
+                // print("Long press \(meal.name)")
+                
+                
+                
+                // Comando para criar um Controller de Alerta, que será mostrado em um pop-up quando o usuario pressionar uma refeição da lista.
+                let details = UIAlertController(title: meal.name, message: meal.details(), preferredStyle: UIAlertController.Style.alert)
+                
+                // Criando o botão de ok que será mostrado no pop-up do AlertController, para que o usuario possa voltar para a lista de refeições.
+                let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
+                details.addAction(ok)
+                
+                // Com o Controller de alerta devidamente configurado, posso mostrar na tela através do comando 'self.present'
+                self.present(details, animated: true, completion: nil)
             }
             
             

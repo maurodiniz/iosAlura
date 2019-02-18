@@ -30,6 +30,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         items.append(item)
         if let table = tableview{
             table.reloadData()
+        }else{
+            let alert = UIAlertController(title: "Sorry", message: "Unable to refresh Items!", preferredStyle: UIAlertController.Style.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
+            alert.addAction(ok)
+            
+            present(alert, animated: true, completion: nil)
         }
     }
     
