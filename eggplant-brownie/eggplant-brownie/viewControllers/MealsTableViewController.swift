@@ -51,17 +51,11 @@ class MealsTableViewController: UITableViewController, AddAMealDelegate{
                 let meal = meals[row]
                 // print("Long press \(meal.name)")
                 
+                RemoveMealController(controller: self).show(meal, handler: {action in self.meals.remove(at: row)
+                    self.tableView.reloadData()
+                })
                 
                 
-                // Comando para criar um Controller de Alerta, que será mostrado em um pop-up quando o usuario pressionar uma refeição da lista.
-                let details = UIAlertController(title: meal.name, message: meal.details(), preferredStyle: UIAlertController.Style.alert)
-                
-                // Criando o botão de ok que será mostrado no pop-up do AlertController, para que o usuario possa voltar para a lista de refeições.
-                let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler: nil)
-                details.addAction(ok)
-                
-                // Com o Controller de alerta devidamente configurado, posso mostrar na tela através do comando 'self.present'
-                self.present(details, animated: true, completion: nil)
             }
             
             
@@ -69,4 +63,6 @@ class MealsTableViewController: UITableViewController, AddAMealDelegate{
         }
         
     }
+    
+    
 }

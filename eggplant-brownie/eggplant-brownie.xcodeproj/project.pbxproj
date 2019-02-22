@@ -19,6 +19,7 @@
 		262C24852203AA0D0084C0FB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262C24842203AA0D0084C0FB /* Item.swift */; };
 		262C24872203AD7C0084C0FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262C24862203AD7C0084C0FB /* ViewController.swift */; };
 		262C24892203AE920084C0FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262C24882203AE920084C0FB /* Main.storyboard */; };
+		26A6B61A221F5DA900107068 /* RemoveMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A6B619221F5DA900107068 /* RemoveMealController.swift */; };
 		26B00DCB221CB2DD00A4A9E6 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B00DCA221CB2DD00A4A9E6 /* Alert.swift */; };
 		26D569322208E39C008E78C1 /* MealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D569312208E39C008E78C1 /* MealsTableViewController.swift */; };
 		26D8CF0022105AC500C2EBB9 /* AddAMealDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8CEFF22105AC500C2EBB9 /* AddAMealDelegate.swift */; };
@@ -61,6 +62,7 @@
 		262C24862203AD7C0084C0FB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		262C24882203AE920084C0FB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		26A4880F21FFA70B00C8CF00 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		26A6B619221F5DA900107068 /* RemoveMealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveMealController.swift; sourceTree = "<group>"; };
 		26B00DCA221CB2DD00A4A9E6 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		26D569312208E39C008E78C1 /* MealsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsTableViewController.swift; sourceTree = "<group>"; };
 		26D8CEFF22105AC500C2EBB9 /* AddAMealDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAMealDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				262C24862203AD7C0084C0FB /* ViewController.swift */,
 				26D569312208E39C008E78C1 /* MealsTableViewController.swift */,
 				26034B6D221370060007690D /* NewItemViewController.swift */,
+				26A6B619221F5DA900107068 /* RemoveMealController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A6B61A221F5DA900107068 /* RemoveMealController.swift in Sources */,
 				26B00DCB221CB2DD00A4A9E6 /* Alert.swift in Sources */,
 				26D569322208E39C008E78C1 /* MealsTableViewController.swift in Sources */,
 				262C24852203AA0D0084C0FB /* Item.swift in Sources */,
