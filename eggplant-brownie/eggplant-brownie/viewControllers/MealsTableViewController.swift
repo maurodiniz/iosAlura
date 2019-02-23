@@ -2,15 +2,30 @@ import UIKit
 
 class MealsTableViewController: UITableViewController, AddAMealDelegate{
     
-    var meals = [Meal(name: "Eggaplant Brownie", happiness: 5),
-                 Meal(name: "Zucchini Muffin", happiness: 3),
-                 Meal(name: "Daniela´s cheesecake", happiness: 5)]
+    var meals = Array<Meal>()
     
     // Adiciona uma meal recebida por parametro no array meals. Com o underline antes do 1o parametro,
     // Eu especifico que seu nome não deve ser escrito na chamada do método, bastando o programador mandar o parametro direto
     func add(_ meal:Meal) {
         meals.append(meal)
+        
+        // salvando a Meal no Dao para que seja gravado no arquivo
+        Dao().save(meals)
         tableView.reloadData()
+    }
+    
+    // Ao carregar essa View, a lista de refeições devera ser carregada a partir do arquivo "eggplant-brownie-meals.dados"
+    override func viewDidLoad() {
+        self.meals = Dao().load()
+    }
+    
+    func getArchive() -> String{
+        let userDirs = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let dir = userDirs[0]
+        
+        let archive = "\(dir)/eggplant-brownie-meals.dados"
+        
+        return archive
     }
     
     // Ação realizada logo antes de pular de uma tela para outra

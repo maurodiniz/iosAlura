@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var delegate : AddAMealDelegate?
     var selected = Array<Item>()
     
-    var items = [
+   /* var items = [
         Item(name: "Eggplant", calories: 10),
         Item(name: "Brownie", calories: 10),
         Item(name: "Zucchini", calories: 10),
@@ -22,12 +22,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         Item(name: "Coconut oil", calories: 500),
         Item(name: "Chocolate frosting", calories: 1000),
         Item(name: "Chocolate chip", calories: 1000),
-        ]
+        ] */
+    
+    var items = Array<Item>()
     
     @IBOutlet var tableview: UITableView?
     
     func add(_ item: Item) {
         items.append(item)
+        
+        Dao().save(items)
+        
+        
         if let table = tableview{
             table.reloadData()
         }else{
@@ -39,6 +45,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let newItemButton = UIBarButtonItem(title: "New", style: UIBarButtonItem.Style.plain, target: self, action: #selector(showNewItem))
         
         navigationItem.rightBarButtonItem = newItemButton
+        
+        items = Dao().load()
     }
     
     @objc func showNewItem(){
@@ -108,6 +116,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         return nil
+    }
+    
+    func getArchive() -> String{
+        let userDirs = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let dir = userDirs[0]
+        
+        let archive = "\(dir)/eggplant-brownie-items.dados"
+        
+        return archive
     }
     
     /* Se tiver uma refeição retornada do getMealFromForm e tiver um delegate, adiciona e navega. */
